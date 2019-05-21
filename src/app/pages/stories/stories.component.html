@@ -1,0 +1,32 @@
+<table width="100%" cellspacing="0" class="table table-bordered">
+  <th>Name</th>
+  <th>Description</th>
+  <th>user</th>
+  <th>Status</th>
+  <th>Sprint</th>
+  <th>Actions</th>
+  <tr *ngFor="let story of stories | async;">
+    <td>
+      {{story.name}}
+    </td>
+    <td>
+      {{story.description}}
+    </td>
+    <td>
+      user
+    </td>
+    <td>
+      status
+    </td>
+    <td>
+      sprint
+    </td>
+    <td>
+      <button class="btn btn-danger" (click)="delete(story)">Delete</button>
+      <app-update-story [storyData]="story" ></app-update-story>
+      <!-- <button class="btn btn-danger" (click)="edit(story)">Edit</button> -->
+
+    </td>
+  </tr>
+</table>
+<app-create-story></app-create-story>

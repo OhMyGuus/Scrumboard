@@ -1,0 +1,33 @@
+import { Component, OnInit } from '@angular/core';
+import { StoriesRepoService } from 'src/app/repositories/Stories/Stories-repo.service';
+import { Userstory } from 'src/app/models/userstory';
+import { Observable } from 'rxjs';
+
+@Component({
+  selector: 'app-stories',
+  templateUrl: './stories.component.html',
+  styleUrls: ['./stories.component.scss']
+})
+export class StoriesComponent implements OnInit {
+
+  stories: Observable<Userstory[]>;
+  constructor(private storiesRepo: StoriesRepoService) {
+    this.stories = storiesRepo.observe();
+
+  }
+
+  delete(story: Userstory) {
+    console.log('delete', story);
+    this.storiesRepo.remove(story);
+  }
+
+  edit(story: Userstory) {
+    console.log('edit', story);
+    story.name  = 'Edtied';
+    this.storiesRepo.update(story);
+  }
+
+  ngOnInit() {
+  }
+
+}

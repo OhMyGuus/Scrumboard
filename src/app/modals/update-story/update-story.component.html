@@ -1,0 +1,23 @@
+<button type="button" class="btn btn-primary" (click)="openModal(template)">Edit</button>
+  
+  <ng-template #template>
+    <div class="modal-header">
+      <h4 class="modal-title pull-left">Create story</h4>
+      <button type="button" class="close pull-right" aria-label="Close"
+        (click)="modalRef.hide()">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="modal-body">
+      <div class="form-group">
+        <label for="formGroupExampleInput">Name</label>
+        <input type="text" class="form-control" [(ngModel)]="story.name"
+          placeholder="Name">
+      </div>
+      <div class="form-group">
+        <label for="formGroupExampleInput2">Description</label>
+        <input type="text" class="form-control" placeholder="description"  [(ngModel)]="story.description">
+      </div>
+      <button class="btn btn-success" (click)="update()">Update</button>
+    </div>
+  </ng-template>
