@@ -10,6 +10,7 @@ export class Userstory implements IDbObject {
     points?: number;
     users?: User[];
     storystatus?: StoryStatus;
+    sprintId?: string;
 
     constructor() {
     }

@@ -16,7 +16,8 @@ export class SprintDetailsComponent implements OnInit {
 
   sprintId: string;
   sprintObs: Observable<Sprint>;
-  stories: Observable<Userstory[]>;
+  backLog: Userstory[];
+  sprintStories: Observable<Userstory[]>;
   sprint: Sprint;
 
   constructor(private route: ActivatedRoute, private sprintRepo: SprintsRepoService, private storyRepo: StoriesRepoService) {
@@ -31,13 +32,21 @@ export class SprintDetailsComponent implements OnInit {
       this.sprint = o;
       console.log('loaded: ', o);
     });
-  this.storyRepo.observe().then(obj => {
-    console.log(obj);
-  });
 
-
+    this.storyRepo.observe().subscribe(this.updateStories);
   }
 
+  updateStories(stories: Userstory[]) {
+    let backLog = [];
+    let sprint = [];
+    stories.forEach(story => {
+      if (story.sprintId) {
+        sprint.push
+      } else {
+        backLog.push(story);
+      }
+    });
+  }
   ngOnInit() {
   }
 
