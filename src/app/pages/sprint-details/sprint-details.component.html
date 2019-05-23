@@ -1,5 +1,5 @@
 <div *ngIf="sprintObs | async; let sprintObs;">
-  {{ sprintObs.description }}
+  <h3>Sprint: {{ sprintObs.description }}</h3>
   <table width="100%" cellspacing="0" class="table table-bordered">
     <th>Backlog</th>
     <th>Sprint</th>
@@ -7,15 +7,18 @@
       <!--Backlog-->
       <td>
         <table width="100%" cellspacing="0" class="table table-bordered" *ngFor="let story of backlogStories" (click)="changeStory(story)">
-      <th>Story : 1 punt</th>
-    <tr>Als een gebruiker wil ik een user kunnen aanmaken zodat ik kan inloggen</tr>
-  </table>
+      <th>Story {{story.points}}</th>
+      <tr>{{story.name}}</tr>
+      <hr>
+      <tr>{{story.description}}</tr>  </table>
   </td>
   <!--Sprint-->
   <td>
     <table width="100%" cellspacing="0" class="table table-bordered" *ngFor="let story of sprintStories" (click)="changeStory(story)">
-  <th>Story</th>
-  <tr>Als een gebruiker wil ik een user kunnen aanmaken zodat ik kan inloggen</tr>
+  <th>Story {{story.points}}</th>
+  <tr>{{story.name}}</tr>
+  <hr>
+  <tr>{{story.description}}</tr>
   </table>
   </td>
   </tr>

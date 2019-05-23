@@ -25,6 +25,7 @@ import { UpdateSprintComponent } from './modals/sprints/update-sprint/update-spr
 import { CreateSprintComponent } from './modals/sprints/create-sprint/create-sprint.component';
 import { SprintsComponent } from './pages/sprints/sprints.component';
 import { SprintDetailsComponent } from './pages/sprint-details/sprint-details.component';
+import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
 
 @NgModule({
   declarations: [
@@ -54,6 +55,7 @@ import { SprintDetailsComponent } from './pages/sprint-details/sprint-details.co
     AngularFireModule.initializeApp(environment.firebase),
     AngularFirestoreModule.enablePersistence(),
     AngularFireAuthModule,
+    BsDatepickerModule.forRoot(),
   ],
   providers: [],
   bootstrap: [AppComponent]
