@@ -8,6 +8,7 @@ import { SprintsComponent } from './pages/sprints/sprints.component';
 import { SprintDetailsComponent } from './pages/sprint-details/sprint-details.component';
 
 const routes: Routes = [
+  { path: '', redirectTo: '/sprints', pathMatch: 'full' },
   {
     path: 'test', component: TestComponent
   },

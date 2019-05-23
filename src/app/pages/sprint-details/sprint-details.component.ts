@@ -16,37 +16,48 @@ export class SprintDetailsComponent implements OnInit {
 
   sprintId: string;
   sprintObs: Observable<Sprint>;
-  backLog: Userstory[];
-  sprintStories: Observable<Userstory[]>;
+  backlogStories: Userstory[] = new Array<Userstory>();
+  sprintStories: Userstory[] = new Array<Userstory>();
   sprint: Sprint;
 
   constructor(private route: ActivatedRoute, private sprintRepo: SprintsRepoService, private storyRepo: StoriesRepoService) {
     this.sprintId = this.route.snapshot.paramMap.get('id');
     console.log('details sprint: ', this.sprintId);
-    this.initialize(this.sprintId);
-    this.stories = this.storyRepo.observe();
+    this.sprintObs = this.sprintRepo.get(this.sprintId);
+    this.sprintObs.subscribe((o) => this.updateSprint(o));
+    this.storyRepo.observe().subscribe((o) => this.updateStories(o));
   }
 
-  initialize(id: string) {
-    this.sprintRepo.get(this.sprintId).toPromise().then(o => {
-      this.sprint = o;
-      console.log('loaded: ', o);
-    });
-
-    this.storyRepo.observe().subscribe(this.updateStories);
+  updateSprint(sprint: Sprint) {
+    this.sprint = sprint;
   }
 
   updateStories(stories: Userstory[]) {
-    let backLog = [];
-    let sprint = [];
+    const backLog = [];
+    const sprint = [];
     stories.forEach(story => {
       if (story.sprintId) {
-        sprint.push
+        if (story.sprintId === this.sprintId) {
+          sprint.push(story);
+        }
       } else {
         backLog.push(story);
       }
     });
+    this.backlogStories = backLog;
+    this.sprintStories = sprint;
+
   }
+
+  changeStory(story: Userstory) {
+    if (story.sprintId) {
+      story.sprintId = '';
+    } else {
+      story.sprintId = this.sprintId;
+    }
+    this.storyRepo.update(story);
+  }
+
   ngOnInit() {
   }
 
