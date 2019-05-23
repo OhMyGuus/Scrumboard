@@ -4,8 +4,8 @@ import { IDbObject } from './IDBObject';
 
 export class Userstory implements IDbObject {
     id?: string;
-    name: string;
-    description: string;
+    name: string = 'story';
+    description: string = 'desc';
     priority?: number;
     points?: number;
     users?: User[];

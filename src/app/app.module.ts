@@ -26,7 +26,9 @@ import { CreateSprintComponent } from './modals/sprints/create-sprint/create-spr
 import { SprintsComponent } from './pages/sprints/sprints.component';
 import { SprintDetailsComponent } from './pages/sprint-details/sprint-details.component';
 import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
-
+import {FormlyBootstrapModule} from '@ngx-formly/bootstrap';
+import {FormlyModule} from '@ngx-formly/core';
+import {DragDropModule} from '@angular/cdk/drag-drop';
 @NgModule({
   declarations: [
     AppComponent,
@@ -56,7 +58,11 @@ import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
     AngularFirestoreModule.enablePersistence(),
     AngularFireAuthModule,
     BsDatepickerModule.forRoot(),
-  ],
+    ReactiveFormsModule,
+    FormlyModule.forRoot(),
+    FormlyBootstrapModule,
+    DragDropModule
+    ],
   providers: [],
   bootstrap: [AppComponent]
 })

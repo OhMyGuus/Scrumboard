@@ -18,7 +18,7 @@
       {{sprint.endDate}}
     </td>
     <td>
-        <button class="btn btn-primary" (click)="delete(sprint)">Start</button>
+        <button class="btn btn-primary" [disabled]="sprint.active" (click)="start(sprint)">Start</button>
         <button class="btn btn-primary" [routerLink]="['/sprints/' + sprint.id]">Details</button>
         <button class="btn btn-danger" (click)="delete(sprint)">Delete</button>
         <app-update-sprint [sprintData]="sprint"></app-update-sprint>

@@ -15,4 +15,20 @@ export class SprintsRepoService extends BaseRepoService<Sprint> {
   constructor(private dbInj: AngularFirestore) {
     super(dbInj, 'sprints');
   }
+
+  setActiveSprint(sprint: Sprint) {
+    this.getAll().toPromise().then(sprints => {
+      sprints.forEach(o => {
+        o.active = o.id === sprint.id;
+        this.update(o);
+      });
+    });
+  }
+  getActiveSprint() {
+    return this.observe().pipe(map((o) => {
+      return o.find((b => b.active));
+    }));
+  }
+
 }
+

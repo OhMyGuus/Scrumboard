@@ -20,6 +20,9 @@ export class SprintsComponent implements OnInit {
     this.sprintsRepo.remove(sprint);
   }
 
+  start(sprint: Sprint) {
+    this.sprintsRepo.setActiveSprint(sprint);
+  }
   ngOnInit() {
   }
 

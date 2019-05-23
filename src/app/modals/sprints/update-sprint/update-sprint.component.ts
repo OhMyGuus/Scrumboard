@@ -3,6 +3,7 @@ import { BsModalService, BsModalRef } from 'ngx-bootstrap/modal';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Sprint } from 'src/app/models/sprint';
 import { SprintsRepoService } from 'src/app/repositories/sprints/sprints-repo.service';
+import { FormlyFieldConfig } from '@ngx-formly/core';
 
 @Component({
   selector: 'app-update-sprint',
@@ -14,7 +15,11 @@ export class UpdateSprintComponent implements OnInit {
   modalRef: BsModalRef;
   @Input() sprintData: Sprint;
   private sprint: Sprint;
+  formGroup: FormGroup;
+  fields: Array<FormlyFieldConfig>;
   constructor(private modalService: BsModalService, public formBuilder: FormBuilder, private sprintsRepo: SprintsRepoService) {
+    this.formGroup = new FormGroup({});
+    this.fields = Sprint.getForm();
   }
 
   openModal(template: TemplateRef<any>) {
@@ -27,8 +32,10 @@ export class UpdateSprintComponent implements OnInit {
   }
 
   update() {
-    this.sprintsRepo.update(this.sprint);
-    this.closeModal();
+    if (this.formGroup.valid) {
+      this.sprintsRepo.update(this.sprint);
+      this.closeModal();
+    }
   }
 
   resetFields() {

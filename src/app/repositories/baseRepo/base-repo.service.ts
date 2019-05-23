@@ -16,6 +16,16 @@ export class BaseRepoService<T extends IDbObject> {
     this.log();
   }
 
+  getAll() {
+    return this.collection.get().pipe(map((querySnapshot) => {
+      return querySnapshot.docs.map((b) => {
+        const data = b.data() as T;
+        data.id = b.id;
+        return data;
+      });
+    }));
+  }
+
   observe() {
     return this.collection.snapshotChanges().pipe(map(actions => {
       return actions.map((a) => {
@@ -52,13 +62,14 @@ export class BaseRepoService<T extends IDbObject> {
 
   add(obj: T) {
     this.collection.add({ ...obj });
-}
+  }
 
-remove(obj: T) {
+  remove(obj: T) {
     this.collection.doc(obj.id).delete();
-}
+  }
 
-update(obj: T) {
+  update(obj: T) {
+    console.log('UpdateObj ', obj);
     this.collection.doc(obj.id).update(obj);
   }
 }
