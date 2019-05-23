@@ -21,12 +21,6 @@ export class StoriesComponent implements OnInit {
     this.storiesRepo.remove(story);
   }
 
-  edit(story: Userstory) {
-    console.log('edit', story);
-    story.name  = 'Edtied';
-    this.storiesRepo.update(story);
-  }
-
   ngOnInit() {
   }
 

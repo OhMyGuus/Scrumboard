@@ -21,6 +21,10 @@ import { UsersComponent } from './pages/users/users.component';
 import { UpdateUserComponent } from './modals/users/update-user/update-user.component';
 import { CreateUserComponent } from './modals/users/create-user/create-user.component';
 import { UpdateStoryComponent } from './modals/stories/update-story/update-story.component';
+import { UpdateSprintComponent } from './modals/sprints/update-sprint/update-sprint.component';
+import { CreateSprintComponent } from './modals/sprints/create-sprint/create-sprint.component';
+import { SprintsComponent } from './pages/sprints/sprints.component';
+import { SprintDetailsComponent } from './pages/sprint-details/sprint-details.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +36,11 @@ import { UpdateStoryComponent } from './modals/stories/update-story/update-story
     UpdateStoryComponent,
     UsersComponent,
     UpdateUserComponent,
-    CreateUserComponent
+    CreateUserComponent,
+    UpdateSprintComponent,
+    CreateSprintComponent,
+    SprintsComponent,
+    SprintDetailsComponent
   ],
   imports: [
     ReactiveFormsModule,

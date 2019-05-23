@@ -21,12 +21,6 @@ export class UsersComponent implements OnInit {
     this.usersRepo.remove(user);
   }
 
-  edit(user: User) {
-    console.log('edit', user);
-    user.name  = 'Edtied';
-    this.usersRepo.update(user);
-  }
-
   ngOnInit() {
   }
 

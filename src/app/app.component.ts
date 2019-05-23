@@ -21,6 +21,11 @@ export class AppComponent {
       icon: 'albums'
     },
     {
+      title: 'Sprints',
+      url: '/sprints',
+      icon: 'users'
+    },
+    {
       title: 'stories',
       url: '/stories',
       icon: 'albums'

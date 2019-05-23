@@ -1,0 +1,28 @@
+<table width="100%" cellspacing="0" class="table table-bordered">
+  <th>Id</th>
+  <th>Description</th>
+  <th>Start</th>
+  <th>End</th>
+  <th>Actions</th>
+  <tr *ngFor="let sprint of sprints | async;">
+    <td>
+      {{sprint.id}}
+    </td>
+    <td>
+      {{sprint.description}}
+    </td>
+    <td>
+      {{sprint.startDate}}
+    </td>
+    <td>
+      {{sprint.endDate}}
+    </td>
+    <td>
+        <button class="btn btn-primary" (click)="delete(sprint)">Start</button>
+        <button class="btn btn-primary" [routerLink]="['/sprints/' + sprint.id]">Details</button>
+        <button class="btn btn-danger" (click)="delete(sprint)">Delete</button>
+        <app-update-sprint [sprintData]="sprint"></app-update-sprint>
+    </td>
+  </tr>
+</table>
+<app-create-sprint></app-create-sprint>

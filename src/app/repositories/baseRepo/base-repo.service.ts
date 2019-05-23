@@ -34,16 +34,31 @@ export class BaseRepoService<T extends IDbObject> {
     this.observe().subscribe((obj) => console.log(obj));
   }
 
+  get(id: string) {
+    return this.collection.doc(id).get().pipe(map((a) => {
+      const data = a.data() as T;
+      data.id = a.id;
+      return data;
+    }));
+  }
+
+  observeObj(id: string) {
+    return this.collection.doc(id).snapshotChanges().pipe(map((a) => {
+      const data = a.payload.data() as T;
+      data.id = a.payload.id;
+      return data;
+    }));
+  }
+
   add(obj: T) {
     this.collection.add({ ...obj });
-  }
+}
 
-  remove(obj: T) {
+remove(obj: T) {
     this.collection.doc(obj.id).delete();
-  }
+}
 
-  update(obj: T) {
+update(obj: T) {
     this.collection.doc(obj.id).update(obj);
   }
 }
-

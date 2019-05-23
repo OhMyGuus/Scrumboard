@@ -13,4 +13,11 @@
       <input type="text" class="form-control" [(ngModel)]="user.name" placeholder="Name">
     </div>
   </div>
+  <div class="modal-body">
+      <div class="form-group">
+        <label for="formGroupExampleInput">Role</label>
+        <input type="text" class="form-control" [(ngModel)]="user.role" placeholder="Name">
+      </div>   
+    <button class="btn btn-success" (click)="update()">Update</button>
+  </div>
 </ng-template>
