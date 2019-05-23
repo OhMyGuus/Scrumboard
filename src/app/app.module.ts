@@ -15,9 +15,12 @@ import { TooltipModule } from 'ngx-bootstrap/tooltip';
 import { ModalModule } from 'ngx-bootstrap/modal';
 import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import { StoriesComponent } from './pages/stories/stories.component';
-import { CreateStoryComponent } from './modals/create-story/create-story.component';
+import { CreateStoryComponent } from './modals/stories/create-story/create-story.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { UpdateStoryComponent } from './modals/update-story/update-story.component';
+import { UsersComponent } from './pages/users/users.component';
+import { UpdateUserComponent } from './modals/users/update-user/update-user.component';
+import { CreateUserComponent } from './modals/users/create-user/create-user.component';
+import { UpdateStoryComponent } from './modals/stories/update-story/update-story.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +29,10 @@ import { UpdateStoryComponent } from './modals/update-story/update-story.compone
     DashboardComponent,
     StoriesComponent,
     CreateStoryComponent,
-    UpdateStoryComponent
+    UpdateStoryComponent,
+    UsersComponent,
+    UpdateUserComponent,
+    CreateUserComponent
   ],
   imports: [
     ReactiveFormsModule,

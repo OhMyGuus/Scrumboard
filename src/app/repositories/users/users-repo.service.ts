@@ -1,15 +1,15 @@
 import { Injectable } from '@angular/core';
 import { AngularFirestore } from '@angular/fire/firestore';
-import { Project } from 'src/app/models/project';
 import { BaseRepoService } from '../BaseRepo/base-repo.service';
+import { User } from 'src/app/models/user';
 
 @Injectable({
   providedIn: 'root'
 })
 
-export class ProjectRepoService extends BaseRepoService<Project> {
+export class UsersRepoService extends BaseRepoService<User> {
   constructor(private dbInj: AngularFirestore) {
-    super(dbInj, 'projects');
+    super(dbInj, 'users');
   }
 
 }

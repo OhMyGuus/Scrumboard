@@ -32,10 +32,7 @@ export class UpdateStoryComponent implements OnInit {
   }
 
   resetFields() {
-    this.story = {
-      name: '',
-      description: ''
-    };
+    this.story = new Userstory();
   }
 
   copyStory() {

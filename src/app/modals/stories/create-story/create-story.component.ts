@@ -43,10 +43,7 @@ export class CreateStoryComponent implements OnInit {
   }
 
   resetFields() {
-    this.story = {
-      name: '',
-      description: ''
-    };
+    this.story = new Userstory();
   }
 
   ngOnInit() {

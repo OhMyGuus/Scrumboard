@@ -25,6 +25,11 @@ export class AppComponent {
       url: '/stories',
       icon: 'albums'
     },
+    {
+      title: 'Users',
+      url: '/users',
+      icon: 'users'
+    },
   ];
 
   constructor(private route: ActivatedRoute, private router: Router) {

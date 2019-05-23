@@ -1,7 +1,8 @@
 import { User } from './user';
 import { StoryStatus } from './storystatus';
+import { IDbObject } from './IDBObject';
 
-export class Userstory {
+export class Userstory implements IDbObject {
     id?: string;
     name: string;
     description: string;
@@ -9,5 +10,9 @@ export class Userstory {
     points?: number;
     users?: User[];
     storystatus?: StoryStatus;
+
+    constructor() {
+    }
+
 }
 
