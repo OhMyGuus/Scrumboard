@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { UpdateSprintComponent } from './update-sprint.component';
+import { UpdateModalComponent } from './update-modal.component';
 
-describe('UpdateSprintComponent', () => {
-  let component: UpdateSprintComponent;
-  let fixture: ComponentFixture<UpdateSprintComponent>;
+describe('UpdateModalComponent', () => {
+  let component: UpdateModalComponent;
+  let fixture: ComponentFixture<UpdateModalComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ UpdateSprintComponent ]
+      declarations: [ UpdateModalComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(UpdateSprintComponent);
+    fixture = TestBed.createComponent(UpdateModalComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
