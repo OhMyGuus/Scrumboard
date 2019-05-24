@@ -15,10 +15,8 @@
     </td>
     <td>
       <button class="btn btn-danger" (click)="delete(user)">Delete</button>
-      <app-update-user [userData]="user"></app-update-user>
-      <!-- <button class="btn btn-danger" (click)="edit(user)">Edit</button> -->
-
+      <app-update-modal [repository]="usersRepo" [modelData]="user"></app-update-modal>
     </td>
   </tr>
 </table>
-<app-create-user></app-create-user>
+<app-create-modal [repository]="usersRepo"></app-create-modal>

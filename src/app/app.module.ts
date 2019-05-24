@@ -14,35 +14,28 @@ import { TooltipModule } from 'ngx-bootstrap/tooltip';
 import { ModalModule } from 'ngx-bootstrap/modal';
 import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import { StoriesComponent } from './pages/stories/stories.component';
-import { CreateStoryComponent } from './modals/stories/create-story/create-story.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { UsersComponent } from './pages/users/users.component';
-import { UpdateUserComponent } from './modals/users/update-user/update-user.component';
-import { CreateUserComponent } from './modals/users/create-user/create-user.component';
-import { UpdateStoryComponent } from './modals/stories/update-story/update-story.component';
-import { UpdateSprintComponent } from './modals/sprints/update-sprint/update-sprint.component';
-import { CreateSprintComponent } from './modals/sprints/create-sprint/create-sprint.component';
 import { SprintsComponent } from './pages/sprints/sprints.component';
 import { SprintDetailsComponent } from './pages/sprint-details/sprint-details.component';
 import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
 import {FormlyBootstrapModule} from '@ngx-formly/bootstrap';
 import {FormlyModule} from '@ngx-formly/core';
 import {DragDropModule} from '@angular/cdk/drag-drop';
+import { CreateModalComponent } from './modals/create-modal/create-modal.component';
+import { UpdateModalComponent } from './modals/update-modal/update-modal.component';
 @NgModule({
   declarations: [
     AppComponent,
     DashboardComponent,
     StoriesComponent,
-    CreateStoryComponent,
-    UpdateStoryComponent,
     UsersComponent,
-    UpdateUserComponent,
-    CreateUserComponent,
-    UpdateSprintComponent,
-    CreateSprintComponent,
     SprintsComponent,
-    SprintDetailsComponent
+    SprintDetailsComponent,
+    CreateModalComponent,
+    UpdateModalComponent
   ],
+
   imports: [
     ReactiveFormsModule,
     FormsModule,
@@ -61,6 +54,7 @@ import {DragDropModule} from '@angular/cdk/drag-drop';
     FormlyBootstrapModule,
     DragDropModule
     ],
+
   providers: [],
   bootstrap: [AppComponent]
 })

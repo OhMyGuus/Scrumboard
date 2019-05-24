@@ -1,6 +1,6 @@
 import { TestBed } from '@angular/core/testing';
 
-import { IDbObject } from 'src/app/models/IDBObject';
+import { IDbObject } from 'src/app/models/inferfaces/IDBObject';
 import { BaseRepoService } from './base-repo.service';
 
 describe('BaseRepoService', () => {

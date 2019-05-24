@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { AngularFirestore, AngularFirestoreCollection, DocumentChangeAction } from '@angular/fire/firestore';
 import { map, mergeAll } from 'rxjs/operators';
 import { Observable } from 'rxjs';
-import { IDbObject } from 'src/app/models/IDBObject';
+import { IDbObject } from 'src/app/models/interfaces/IDBObject';
 
 @Injectable({
   providedIn: 'root'

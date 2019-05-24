@@ -3,15 +3,16 @@ import { AngularFirestore, AngularFirestoreCollection, DocumentChangeAction } fr
 import { Userstory } from 'src/app/models/userstory';
 import { map, mergeAll } from 'rxjs/operators';
 import { Observable } from 'rxjs';
-import { IDbObject } from 'src/app/models/IDBObject';
 import { BaseRepoService } from '../BaseRepo/base-repo.service';
 import { Sprint } from 'src/app/models/sprint';
+import { IRepository } from '../IRepository';
 
 @Injectable({
   providedIn: 'root'
 })
 
-export class SprintsRepoService extends BaseRepoService<Sprint> {
+export class SprintsRepoService extends BaseRepoService<Sprint> implements IRepository {
+
   constructor(private dbInj: AngularFirestore) {
     super(dbInj, 'sprints');
   }
@@ -24,10 +25,15 @@ export class SprintsRepoService extends BaseRepoService<Sprint> {
       });
     });
   }
+
   getActiveSprint() {
     return this.observe().pipe(map((o) => {
       return o.find((b => b.active));
     }));
+  }
+
+  createModel() {
+    return new Sprint();
   }
 
 }

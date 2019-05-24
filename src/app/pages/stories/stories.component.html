@@ -24,8 +24,8 @@
     </td>
     <td>
       <button class="btn btn-danger" (click)="delete(story)">Delete</button>
-      <app-update-story [storyData]="story"></app-update-story>
+      <app-update-modal [repository]="storiesRepo" [modelData]="story"></app-update-modal>
     </td>
   </tr>
 </table>
-<app-create-story></app-create-story>
+<app-create-modal [repository]="storiesRepo"></app-create-modal>

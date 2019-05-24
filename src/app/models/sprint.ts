@@ -1,6 +1,6 @@
 import { Userstory } from './userstory';
 import { User } from './user';
-import { IDbObject } from './IDBObject';
+import { IDbObject } from './interfaces/IDBObject';
 import { FormlyFieldConfig } from '@ngx-formly/core';
 import { FormControl } from '@angular/forms';
 
@@ -11,7 +11,8 @@ export class Sprint implements IDbObject {
     startDate: Date;
     endDate: Date;
     active: boolean;
-    static getForm(): FormlyFieldConfig[] {
+
+    getForm(): FormlyFieldConfig[] {
         return [
             {
                 key: 'description',
@@ -59,5 +60,5 @@ export class Sprint implements IDbObject {
             }
         ];
     }
-}
 
+}
