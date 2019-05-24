@@ -8,9 +8,10 @@ export class Userstory implements IDbObject {
     description: string = 'desc';
     priority?: number;
     points?: number;
-    users?: User[];
-    storystatus?: StoryStatus;
+    userId: string;
+    storystatus: StoryStatus = StoryStatus.backlog;
     sprintId?: string;
+    index?: number;
 
     constructor() {
     }

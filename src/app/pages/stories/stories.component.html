@@ -13,19 +13,18 @@
       {{story.description}}
     </td>
     <td>
-      user
+      {{story.userId}}
     </td>
     <td>
-      status
+      {{story.storystatus}}
+
     </td>
     <td>
-      sprint
+      {{story.sprintId}}
     </td>
     <td>
       <button class="btn btn-danger" (click)="delete(story)">Delete</button>
-      <app-update-story [storyData]="story" ></app-update-story>
-      <!-- <button class="btn btn-danger" (click)="edit(story)">Edit</button> -->
-
+      <app-update-story [storyData]="story"></app-update-story>
     </td>
   </tr>
 </table>

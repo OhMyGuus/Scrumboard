@@ -1,4 +1,65 @@
-
 <div *ngIf="sprint">
-<h2>{{sprint.description}}</h2>
-</div>
+    <h2>{{sprint.description}}</h2>
+    <div cdkDropListGroup class="row">
+        <div class="col col-2 table-responsive-lg">
+            <table class="table table-bordered">
+                <thead>
+                    <tr class="d-flex">
+                        <th class="col col">Backlog</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="d-flex">
+                        <td class="col">
+                            <div class="example-container">
+                                <div cdkDropList [cdkDropListData]="todo"
+                                    class="example-list"
+                                    (cdkDropListDropped)="drop($event,'backlog')">
+                                    <div class="example-box"
+                                        [cdkDragData]="item"
+                                        *ngFor="let item of
+                                        getUserStories(user,status)"
+                                        cdkDrag>{{item.name}}</div>
+                                </div>
+                            </div>
+                        </td>
+                    </tbody>
+                </table>
+
+            </div>
+
+            <div class="col col table-responsive-lg">
+                <table class="table table-bordered">
+                    <thead>
+                        <tr class="d-flex">
+                            <th class="col">User</th>
+                            <th class="col" *ngFor="let status of
+                                statusses">{{status}}</th>
+                        </tr>
+                        <tbody>
+                            <tr *ngFor="let user of users | async;"
+                                class="d-flex">
+                                <td class="col">
+                                    {{user.name}}
+                                </td>
+                                <td *ngFor="let status of statusses"
+                                    class="col">
+                                    <div class="example-container">
+                                        <div cdkDropList
+                                            [cdkDropListData]="todo"
+                                            class="example-list"
+                                            (cdkDropListDropped)="drop($event,
+                                            status, user)">
+                                            <div class="example-box"
+                                                [cdkDragData]="item"
+                                                *ngFor="let item of
+                                                getUserStories(user,status)"
+                                                cdkDrag>{{item.name}}</div>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tbody>
+
+                        </table>
+                    </div>
+                </div>

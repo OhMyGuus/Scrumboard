@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { TestComponent } from './pages/test/test.component';
 import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import { StoriesComponent } from './pages/stories/stories.component';
 import { UsersComponent } from './pages/users/users.component';
@@ -8,10 +7,7 @@ import { SprintsComponent } from './pages/sprints/sprints.component';
 import { SprintDetailsComponent } from './pages/sprint-details/sprint-details.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: '/sprints', pathMatch: 'full' },
-  {
-    path: 'test', component: TestComponent
-  },
+  { path: '', redirectTo: '/dashboard', pathMatch: 'full' },
   {
     path: 'dashboard', component: DashboardComponent
   },
