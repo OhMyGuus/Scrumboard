@@ -1,4 +1,7 @@
 <div *ngIf="sprint">
+
+  <app-burndown [sprint]="sprint"></app-burndown>
+  
     <h2>{{sprint.description}}</h2>
     <div cdkDropListGroup class="row">
         <div class="col col-2 table-responsive-lg">

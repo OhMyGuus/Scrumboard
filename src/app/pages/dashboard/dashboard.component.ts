@@ -38,6 +38,12 @@ export class DashboardComponent implements OnInit {
       story.storystatus = StoryStatus[state];
       story.index = event.currentIndex;
       story.userId = user ? user.id : '';
+      if (story.storystatus === StoryStatus.Done) {
+        story.doneDate = new Date();
+
+      } else {
+        story.doneDate = null;
+      }
       this.storyRepo.update(story);
     }
   }

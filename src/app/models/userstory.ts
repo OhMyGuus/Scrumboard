@@ -13,6 +13,11 @@ export class Userstory implements IDbObject {
     storystatus: StoryStatus = StoryStatus.backlog;
     sprintId?: string;
     index?: number;
+    doneDate?: Date;
+
+    static  getDoneDate(sprint: Userstory) {
+        return Date.parse(`${(sprint.doneDate as any).toDate()}`);
+    }
 
     constructor() {
     }

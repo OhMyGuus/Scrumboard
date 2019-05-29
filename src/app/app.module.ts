@@ -24,6 +24,10 @@ import {FormlyModule} from '@ngx-formly/core';
 import {DragDropModule} from '@angular/cdk/drag-drop';
 import { CreateModalComponent } from './modals/create-modal/create-modal.component';
 import { UpdateModalComponent } from './modals/update-modal/update-modal.component';
+import { BurndownComponent } from './charts/burndown/burndown.component';
+import { NgxChartsModule } from '@swimlane/ngx-charts';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -33,7 +37,8 @@ import { UpdateModalComponent } from './modals/update-modal/update-modal.compone
     SprintsComponent,
     SprintDetailsComponent,
     CreateModalComponent,
-    UpdateModalComponent
+    UpdateModalComponent,
+    BurndownComponent
   ],
 
   imports: [
@@ -52,7 +57,9 @@ import { UpdateModalComponent } from './modals/update-modal/update-modal.compone
     ReactiveFormsModule,
     FormlyModule.forRoot(),
     FormlyBootstrapModule,
-    DragDropModule
+    DragDropModule,
+    NgxChartsModule,
+    BrowserAnimationsModule
     ],
 
   providers: [],

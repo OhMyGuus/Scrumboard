@@ -1,4 +1,3 @@
-import { Userstory } from './userstory';
 import { User } from './user';
 import { IDbObject } from './interfaces/IDBObject';
 import { FormlyFieldConfig } from '@ngx-formly/core';
@@ -7,10 +6,21 @@ import { FormControl } from '@angular/forms';
 export class Sprint implements IDbObject {
     id?: string;
     description: string;
-    userstories: Userstory[];
     startDate: Date;
     endDate: Date;
     active: boolean;
+
+    static getStartDate(sprint: Sprint) {
+        return Date.parse(`${sprint.startDate}`);
+    }
+
+    static  getEndDate(sprint: Sprint) {
+        return Date.parse(`${sprint.endDate}`);
+    }
+
+    static getTotaldays(sprint: Sprint) {
+        return Math.round(Math.floor(this.getEndDate(sprint) - this.getStartDate(sprint)) / 86400000);
+    }
 
     getForm(): FormlyFieldConfig[] {
         return [

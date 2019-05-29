@@ -5,6 +5,7 @@ import { StoriesComponent } from './pages/stories/stories.component';
 import { UsersComponent } from './pages/users/users.component';
 import { SprintsComponent } from './pages/sprints/sprints.component';
 import { SprintDetailsComponent } from './pages/sprint-details/sprint-details.component';
+import { BurndownComponent } from './charts/burndown/burndown.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/dashboard', pathMatch: 'full' },
@@ -22,6 +23,9 @@ const routes: Routes = [
   },
   {
     path: 'users', component: UsersComponent
+  },
+  {
+    path: 'burndown', component: BurndownComponent
   },
 
 ];
