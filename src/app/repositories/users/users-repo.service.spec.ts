@@ -1,6 +1,6 @@
 import { TestBed } from '@angular/core/testing';
+import { ProjectRepoService } from '../projects/project-repo.service';
 
-import { ProjectRepoService } from './users-repo.service';
 
 describe('ProjectRepoService', () => {
   beforeEach(() => TestBed.configureTestingModule({}));

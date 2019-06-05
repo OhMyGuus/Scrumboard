@@ -16,3 +16,22 @@ export class UpdateStoryMockComponent {
 export class CreateStoryMockComponent {
     @Input() storyData: any;
 }
+
+
+@Component({
+    selector: 'app-create-modal',
+    template: 'mock app-create-modal'
+})
+export class CreateModalMockComponent {
+    @Input() repository: any;
+}
+
+
+@Component({
+    selector: 'app-update-modal',
+    template: 'mock app-update-modal'
+})
+export class UpdateModalMockComponent {
+    @Input() repository: any;
+    @Input() modelData: any;
+}

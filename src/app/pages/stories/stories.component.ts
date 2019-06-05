@@ -11,10 +11,8 @@ import { Observable } from 'rxjs';
 export class StoriesComponent implements OnInit {
 
   stories: Observable<Userstory[]>;
-  constructor(private storiesRepo: StoriesRepoService) {
-    this.stories = storiesRepo.observe();
 
-  }
+  constructor(private storiesRepo: StoriesRepoService) {}
 
   delete(story: Userstory) {
     console.log('delete', story);
@@ -22,6 +20,7 @@ export class StoriesComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.stories = this.storiesRepo.observe();
   }
 
 }

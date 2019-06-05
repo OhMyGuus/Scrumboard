@@ -6,7 +6,7 @@ export class MockStoriesRepoService {
     observe() {
         // return mocked storries
         return of([
-
+            {}, {}
         ]);
     }
     remove(story: Userstory) {
