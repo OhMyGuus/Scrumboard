@@ -4,13 +4,10 @@ import { StoriesComponent } from './stories.component';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 import { defaultbed } from '../../../testsuite/defaulttestbed';
-import { UpdateStoryMockComponent, CreateStoryMockComponent,
-  CreateModalMockComponent, UpdateModalMockComponent } from 'src/testsuite/component-mocks';
+import {  CreateModalMockComponent, UpdateModalMockComponent } from 'src/testsuite/component-mocks';
 
 defaultbed.declarations = [
   StoriesComponent,
-  UpdateStoryMockComponent,
-  CreateStoryMockComponent,
   CreateModalMockComponent,
   UpdateModalMockComponent
 ];

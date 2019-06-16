@@ -1,15 +1,18 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { BurndownComponent } from './burndown.component';
+import { defaultbed } from 'src/testsuite/defaulttestbed';
+
+defaultbed.declarations = [
+  BurndownComponent,
+];
 
 describe('BurndownComponent', () => {
   let component: BurndownComponent;
   let fixture: ComponentFixture<BurndownComponent>;
-
+  //
   beforeEach(async(() => {
-    TestBed.configureTestingModule({
-      declarations: [ BurndownComponent ]
-    })
+    TestBed.configureTestingModule(defaultbed)
     .compileComponents();
   }));
 
